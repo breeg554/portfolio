@@ -8,10 +8,11 @@ const Nav = styled.nav`
   left: 0;
   bottom: 0;
   right: 0;
-  transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
+  transform: translateX(100%);
   background-color: #ccc;
   z-index: 99;
 `
+
 const SideNav = styled.ul`
   width: 100%;
   height: 100%;
@@ -21,28 +22,9 @@ const SideNav = styled.ul`
   justify-content: center;
 `
 
-const Navigation = ({ isOpen, setIsOpen }) => {
-  const navRef = useRef(null)
-  useEffect(() => {
-    const nav = navRef.current
-    const lists = [...nav.querySelectorAll("li")]
-
-    // const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } })
-    // gsap.set(lists, { autoAlpha: 0 })
-    // isOpen
-    //   ? tl
-    //       .to(nav, { x: "0", duration: 1 })
-    //       .fromTo(
-    //         lists,
-    //         { y: "20px" },
-    //         { y: "0", duration: 1, autoAlpha: 1, stagger: 0.2 }
-    //       )
-    //   : tl
-    //       .fromTo(lists, { y: "0" }, { y: "20px", duration: 1, stagger: 0.2 })
-    //       .to(nav, { x: "100%", duration: 1 })
-  })
+const Navigation = ({ setIsOpen, menuRef }) => {
   return (
-    <Nav ref={navRef} isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+    <Nav ref={menuRef} onClick={() => setIsOpen(false)}>
       <SideNav>
         <li>
           <AniLink paintDrip to="/" hex={"#222"}>
@@ -58,6 +40,12 @@ const Navigation = ({ isOpen, setIsOpen }) => {
         <li>
           <AniLink paintDrip to="/skills" hex={"#eee"}>
             Go to skills
+          </AniLink>
+          {/* change this hex color to theme */}
+        </li>
+        <li>
+          <AniLink paintDrip to="/projects" hex={"#eee"}>
+            Go to Projects
           </AniLink>
           {/* change this hex color to theme */}
         </li>

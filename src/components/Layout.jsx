@@ -18,7 +18,7 @@ export default function Layout({ children }) {
     <ThemeProvider theme={theme}>
       <Global />
       <Header />
-      {children}
+      <main>{children}</main>
     </ThemeProvider>
   )
 }

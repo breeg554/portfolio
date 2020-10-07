@@ -7,4 +7,9 @@ export const theme = {
         blue: "#4F8A8B",
         white: "#EEEEEE",
     },
+    mediaQ: {
+        small: '@media (min-width: 600px)',
+        medium: '@media (min-width: 900px)',
+        large: '@media (min-width: 1200px)',
+    }
 }

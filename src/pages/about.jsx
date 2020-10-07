@@ -1,34 +1,42 @@
 import React from "react"
 import styled from "styled-components"
-import img from "../images/Gym.png"
+import AboutSvg from "../images/About.svg"
 import Heading from "../components/SectionHeading"
+
 const AboutSection = styled.section`
   padding: 1em;
   background-color: ${({ theme }) => theme.colors.darkGray};
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 `
 const ImgWrapper = styled.div`
-  margin-top: 1em;
+  margin-top: 5em;
+  width: 100%;
   order: 1;
-  img {
+  svg {
+    height: 100%;
     width: 100%;
   }
 `
 const TextWrapper = styled.div`
-  margin-top: 1.5em;
+  margin-top: 3.5em;
   order: 2;
-
   p {
-    padding: 0 0.5em;
-    margin-top: 0.5em;
+    margin-top: 1.5em;
     font-size: 13px;
     color: #999;
   }
   span {
     color: #fff;
+  }
+  a {
+    display: inline-block;
+    color: ${({ theme }) => theme.colors.orange};
+    text-decoration: underline;
+    font-size: 15px;
+    margin-top: 1em;
   }
 `
 const About = () => {
@@ -48,10 +56,13 @@ const About = () => {
           publishing software like Aldus PageMaker including versions of Lorem
           Ipsum.
         </p>
+        <a href="das" target="__blank">
+          Resume
+        </a>
       </TextWrapper>
 
       <ImgWrapper>
-        <img src={img} alt='man doing push-up"s' />
+        <AboutSvg />
       </ImgWrapper>
     </AboutSection>
   )

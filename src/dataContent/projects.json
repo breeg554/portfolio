@@ -1,0 +1,19 @@
+[{
+        "id": 0,
+        "name": "weatherapp",
+        "heading": "Weather App.",
+        "content": "Dasdas as das das dasd asd as das dasd asdasdas asda sdddd. Dadj jdas aii adasdhhhd hasdashaaha adasd asdhda sd sah",
+        "stack": ["React", "html", "css"],
+        "stackImages": ["/images/contentful.png", "/images/gatsby.png"],
+        "projectImg": "/images/mockupZbigniewkustra.png"
+    },
+    {
+        "id": 1,
+        "name": "portfolio",
+        "heading": "Portfolio App.",
+        "content": "Dasdas as das das dasd asd as das dasd asdasdas asda sdddd. Dadj jdas aii adasdhhhd hasdashaaha adasd asdhda sd sah",
+        "stack": ["React", "html", "css"],
+        "stackImages": ["/images/contentful.png", "/images/gatsby.png", "/images/netlify.png"],
+        "projectImg": "/images/zbigniewkustra.png"
+    }
+]
