@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { ThemeProvider, createGlobalStyle } from "styled-components"
 import { theme } from "../utils/theme"
 import Header from "./Header"
+import styled from "styled-components"
+
 const Global = createGlobalStyle`
   *{
     margin: 0;
@@ -13,12 +15,15 @@ const Global = createGlobalStyle`
   }
   
 `
+const Main = styled.main`
+  background-color: ${({ theme }) => theme.colors.white};
+`
 export default function Layout({ children }) {
   return (
     <ThemeProvider theme={theme}>
       <Global />
       <Header />
-      <main>{children}</main>
+      <Main>{children}</Main>
     </ThemeProvider>
   )
 }

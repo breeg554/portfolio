@@ -7,12 +7,17 @@ import gsap from "gsap"
 const SkillsSection = styled.section`
   overflow: hidden;
   position: relative;
-  background-color: ${({ theme }) => theme.colors.white};
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: ${({ theme }) => theme.layoutWidth}px;
+  margin: 0 auto;
+  ${({ theme }) => theme.mediaQ.small} {
+    flex-direction: row;
+    align-items: center;
+  }
 `
 const BgImg = styled.div`
   z-index: 0;
@@ -23,14 +28,36 @@ const BgImg = styled.div`
     width: 100%;
     height: 100%;
   }
+  ${({ theme }) => theme.mediaQ.small} {
+    order: 2;
+    margin: 0 0.5em;
+    flex: 50%;
+  }
+  ${({ theme }) => theme.mediaQ.medium} {
+    padding-right: 2em;
+  }
 `
 const TextWrapper = styled.div`
   order: 2;
   width: 100%;
   margin-top: 2em;
   padding: 2em 1em 0 1em;
-  flex-grow: 1;
   position: relative;
+  ${({ theme }) => theme.mediaQ.small} {
+    order: 1;
+    margin: 0 5% 0 0;
+    flex-basis: 250px;
+  }
+  ${({ theme }) => theme.mediaQ.medium} {
+    flex-basis: 350px;
+    margin: 0 5% 0 2em;
+    & > div {
+      margin-top: 1em;
+    }
+  }
+  ${({ theme }) => theme.mediaQ.large} {
+    margin-left: 3em;
+  }
 `
 const SkillsButton = styled.button`
   background-color: transparent;
@@ -42,6 +69,10 @@ const SkillsButton = styled.button`
   font-size: 18px;
   font-weight: 600;
   outline: none;
+  ${({ theme }) => theme.mediaQ.medium} {
+    font-size: 22px;
+    cursor: pointer;
+  }
 `
 const SkillsList = styled.ul`
   list-style: none;
@@ -63,6 +94,10 @@ const SingleSkill = styled.li`
     height: 5px;
     border-radius: 50%;
     background-color: ${({ theme }) => theme.colors.blue};
+  }
+  ${({ theme }) => theme.mediaQ.medium} {
+    font-size: 18px;
+    margin-bottom: 0.5em;
   }
 `
 const Wrapper = styled.div`

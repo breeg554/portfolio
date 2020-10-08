@@ -1,0 +1,25 @@
+[{
+        "id": 0,
+        "navBackground": "#222",
+        "name": "Home",
+        "path": "/"
+    },
+    {
+        "id": 1,
+        "navBackground": "#eee",
+        "name": "About",
+        "path": "/about"
+    },
+    {
+        "id": 2,
+        "navBackground": "#eee",
+        "name": "Skills",
+        "path": "/skills"
+    },
+    {
+        "id": 3,
+        "navBackground": "#222",
+        "name": "Projects",
+        "path": "/projects"
+    }
+]

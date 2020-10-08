@@ -2,24 +2,46 @@ import React, { useEffect } from "react"
 import styled from "styled-components"
 import { IoIosArrowBack } from "react-icons/io"
 import { graphql } from "gatsby"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import AniLink from "../components/NewAniLink"
 const StyledProjectPage = styled.section`
-  background-color: ${({ theme }) => theme.colors.white};
   min-height: 100vh;
   width: 100%;
+  max-width: ${({ theme }) => theme.layoutWidth}px;
+  margin: 0 auto;
   padding: 3em 1em 1em 1em;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 1em;
+  ${({ theme }) => theme.mediaQ.small} {
+    grid-row-gap: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+      "btn   ."
+      "left right";
+    align-items: center;
+  }
 `
 const BackIcon = styled.div`
   margin-top: 3em;
   max-width: 60px;
   a {
     display: flex;
-    align-items: center;
-    color: ${({ theme }) => theme.colors.darkGray};
+    align-items: top;
+    color: ${({ theme }) => theme.colors.lightGray};
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  ${({ theme }) => theme.mediaQ.small} {
+    grid-area: btn;
+    margin-top: 0;
+  }
+  ${({ theme }) => theme.mediaQ.medium} {
+    margin-left: 1em;
+  }
+  ${({ theme }) => theme.mediaQ.large} {
+    margin-left: 2em;
   }
 `
 const ImgWrapper = styled.div`
@@ -28,6 +50,21 @@ const ImgWrapper = styled.div`
   overflow: hidden;
   img {
     width: 100%;
+  }
+  ${({ theme }) => theme.mediaQ.small} {
+    grid-area: right;
+  }
+`
+const ProjectWrapper = styled.div`
+  ${({ theme }) => theme.mediaQ.small} {
+    grid-area: left;
+  }
+  ${({ theme }) => theme.mediaQ.medium} {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  ${({ theme }) => theme.mediaQ.large} {
+    padding-left: 2em;
   }
 `
 const ProjectPart = styled.div`
@@ -45,6 +82,30 @@ const ProjectPart = styled.div`
   h1,
   li {
     color: ${({ theme }) => theme.colors.gray};
+  }
+  ${({ theme }) => theme.mediaQ.small} {
+    h1 {
+      font-size: 40px;
+    }
+    & > span {
+      font-size: 15px;
+    }
+  }
+  ${({ theme }) => theme.mediaQ.medium} {
+    h1 {
+      font-size: 50px;
+    }
+    & > span {
+      font-size: 17px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  ${({ theme }) => theme.mediaQ.large} {
+    h1 {
+      font-size: 60px;
+    }
   }
 `
 const StackList = styled.ul`
@@ -75,6 +136,14 @@ const LinkWrapper = styled.ul`
   li:nth-of-type(2) {
     background-color: ${({ theme }) => theme.colors.blue};
   }
+  ${({ theme }) => theme.mediaQ.medium} {
+    li {
+      padding: 0.3em 1em;
+    }
+    a {
+      font-size: 16px;
+    }
+  }
 `
 const ProjectTemplate = ({ data }) => {
   const projectData = data.allSitePage.edges[0].node.context
@@ -82,7 +151,7 @@ const ProjectTemplate = ({ data }) => {
   return (
     <StyledProjectPage>
       <BackIcon>
-        <AniLink to="/projects" paintDrip>
+        <AniLink path="/projects">
           <IoIosArrowBack />
           back
         </AniLink>
@@ -91,7 +160,7 @@ const ProjectTemplate = ({ data }) => {
       <ImgWrapper>
         <img src={projectData.projectImg} alt="project present" />
       </ImgWrapper>
-      <div>
+      <ProjectWrapper>
         <ProjectPart>
           <span>Project name.</span>
           <h1>{projectData.heading}</h1>
@@ -108,15 +177,15 @@ const ProjectTemplate = ({ data }) => {
             ))}
           </StackList>
         </ProjectPart>
-      </div>
-      <LinkWrapper>
-        <li>
-          <a href="#">Demo!</a>
-        </li>
-        <li>
-          <a href="#">Code!</a>
-        </li>
-      </LinkWrapper>
+        <LinkWrapper>
+          <li>
+            <a href="#">Demo!</a>
+          </li>
+          <li>
+            <a href="#">Code!</a>
+          </li>
+        </LinkWrapper>
+      </ProjectWrapper>
     </StyledProjectPage>
   )
 }

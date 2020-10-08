@@ -14,11 +14,17 @@ const Wrapper = styled.div`
     z-index: 0;
   }
 `
-const StyledHeading = styled.h2`
+const StyledHeading = styled.h1`
   position: relative;
   color: ${({ fontColor }) => (fontColor ? fontColor : "#000")};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "45px")};
   z-index: 1;
+  ${({ theme }) => theme.mediaQ.medium} {
+    font-size: 55px;
+  }
+  ${({ theme }) => theme.mediaQ.large} {
+    font-size: 65px;
+  }
 `
 const Heading = ({ children, color, fontSize }) => {
   return (
