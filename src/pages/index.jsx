@@ -2,7 +2,8 @@ import React, { useRef, useEffect } from "react"
 import Img from "../images/Banner.png"
 import styled from "styled-components"
 import AniLink from "../components/NewAniLink"
-import gsap from "gsap"
+import { slideInTopAnimation } from "../components/Animations"
+
 const BannerSection = styled.section`
   position: relative;
   padding: 0 1em;
@@ -103,6 +104,7 @@ const LinkWrapper = styled.ul`
   li {
     margin-right: 0.8em;
     border-radius: 5px;
+
     a {
       padding: 0.3em 0.7em;
       display: block;
@@ -119,6 +121,7 @@ const LinkWrapper = styled.ul`
   li:nth-of-type(2) {
     background-color: ${({ theme }) => theme.colors.orange};
   }
+
   ${({ theme }) => theme.mediaQ.medium} {
     margin-top: 2em;
 
@@ -136,25 +139,14 @@ const LinkWrapper = styled.ul`
 export default function Home() {
   const contentRef = useRef(null)
   const imgRef = useRef(null)
-  const tl = useRef()
+
   useEffect(() => {
     const img = imgRef.current
     const wrapper = contentRef.current
     const links = wrapper.querySelectorAll("li")
     const headers = wrapper.querySelectorAll("h1")
     const paragraph = wrapper.querySelector("p")
-    tl.current = gsap.timeline({ defaults: { ease: "powe3.inOut" } })
-    gsap.set([links, headers, paragraph], { autoAlpha: 0, y: "+=10px" })
-    gsap.set(img, { autoAlpha: 0, y: "+=5px" })
-    tl.current
-      .staggerTo(
-        [...headers, paragraph, links],
-        1,
-        { y: 0, autoAlpha: 1 },
-        0.2,
-        "start"
-      )
-      .to(img, { autoAlpha: 1, y: 0, duration: 1 }, "start")
+    slideInTopAnimation([headers, img, paragraph, links], 1)
   }, [])
   return (
     <>
@@ -167,10 +159,10 @@ export default function Home() {
           <p>I'm going to be a Junior front-end dev.</p>
           <LinkWrapper>
             <li>
-              <AniLink path="/about">About me!</AniLink>
+              <AniLink path="/about">About me.</AniLink>
             </li>
             <li>
-              <AniLink path="/skills">Projects!</AniLink>
+              <AniLink path="/projects">Projects.</AniLink>
             </li>
           </LinkWrapper>
         </HeadingWrapper>

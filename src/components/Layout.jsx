@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { ThemeProvider, createGlobalStyle } from "styled-components"
 import { theme } from "../utils/theme"
 import Header from "./Header"

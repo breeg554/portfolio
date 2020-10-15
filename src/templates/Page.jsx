@@ -1,8 +1,9 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { IoIosArrowBack } from "react-icons/io"
 import { graphql } from "gatsby"
 import AniLink from "../components/NewAniLink"
+import { slideInTopAnimation } from "../components/Animations"
 const StyledProjectPage = styled.section`
   min-height: 100vh;
   width: 100%;
@@ -111,6 +112,8 @@ const ProjectPart = styled.div`
 const StackList = styled.ul`
   list-style: none;
   display: flex;
+  display: flex;
+  flex-wrap: wrap;
 `
 const StackEl = styled.li`
   margin-right: 1em;
@@ -146,8 +149,17 @@ const LinkWrapper = styled.ul`
   }
 `
 const ProjectTemplate = ({ data }) => {
+  const contentRef = useRef(null)
+  const imgRef = useRef(null)
   const projectData = data.allSitePage.edges[0].node.context
 
+  useEffect(() => {
+    const content = contentRef.current
+    const img = imgRef.current
+    const aboutProject = content.querySelectorAll("div")
+    const li = content.querySelectorAll("li")
+    slideInTopAnimation([img, aboutProject, li], 1)
+  }, [])
   return (
     <StyledProjectPage>
       <BackIcon>
@@ -157,10 +169,10 @@ const ProjectTemplate = ({ data }) => {
         </AniLink>
       </BackIcon>
 
-      <ImgWrapper>
+      <ImgWrapper ref={imgRef}>
         <img src={projectData.projectImg} alt="project present" />
       </ImgWrapper>
-      <ProjectWrapper>
+      <ProjectWrapper ref={contentRef}>
         <ProjectPart>
           <span>Project name.</span>
           <h1>{projectData.heading}</h1>

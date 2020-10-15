@@ -5,9 +5,10 @@ export const theme = {
         darkGray: '#222222',
         orange: "#FBD46D",
         blue: "#4F8A8B",
-        white: "#EEEEEE",
+        white: "#fff",
     },
-    layoutWidth: 1250,
+    layoutWidth: 1350,
+    desktopStartsWidth: 900,
     mediaQ: {
         small: '@media (min-width: 600px)',
         medium: '@media (min-width: 900px)',
