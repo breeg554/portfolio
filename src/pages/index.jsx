@@ -1,43 +1,51 @@
 import React, { useRef, useEffect } from "react"
-import Img from "../images/Banner.png"
+import Img from "../images/home.svg"
 import styled from "styled-components"
 import AniLink from "../components/NewAniLink"
 import { slideInTopAnimation } from "../components/Animations"
 
 const BannerSection = styled.section`
   position: relative;
-  padding: 0 1em;
+  padding: 3em 1em 0 1em;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   max-width: ${({ theme }) => theme.layoutWidth}px;
   margin: 0 auto;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ ${({ theme }) => theme.mediaQ.medium} {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 `
 const ImgWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 0;
   width: 100%;
-  max-width: 700px;
-  img {
+  max-width: 650px;
+  margin: 0 auto;
+  svg {
     width: 100%;
+    height: auto;
   }
   ${({ theme }) => theme.mediaQ.medium} {
-    padding-right: 2em;
+
+    flex-grow: 1;
+    flex: 50%;
+    max-width: 100%;
   }
-  ${({ theme }) => theme.mediaQ.large} {
-    padding-right: 3em;
-  }
+ 
 `
 const HeadingWrapper = styled.div`
-  position: absolute;
-  z-index: 1;
-  padding-left: 1em;
   width: 100%;
-  text-align: left;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+  flex-grow: 1;
+  padding-top: 5em;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   h1 {
     font-weight: 600;
     span {
@@ -59,18 +67,22 @@ const HeadingWrapper = styled.div`
     font-size: 15px;
   }
   ${({ theme }) => theme.mediaQ.small} {
+    padding-top: 9em;
     h1:nth-of-type(1) {
-      font-size: 30px;
+      font-size: 40px;
     }
     h1:nth-of-type(2) {
-      font-size: 60px;
+      font-size: 80px;
     }
     p {
-      font-size: 20px;
+      font-size: 25px;
     }
   }
   ${({ theme }) => theme.mediaQ.medium} {
     padding-left: 2em;
+    padding-top: 0;
+    width: auto;
+    flex-grow: 0;
     h1:nth-of-type(1) {
       font-size: 40px;
     }
@@ -82,8 +94,6 @@ const HeadingWrapper = styled.div`
     }
   }
   ${({ theme }) => theme.mediaQ.large} {
-    padding-left: 3em;
-    top: 50%;
     h1:nth-of-type(1) {
       font-size: 50px;
     }
@@ -91,7 +101,7 @@ const HeadingWrapper = styled.div`
       font-size: 100px;
     }
     p {
-      font-size: 30px;
+      font-size: 28px;
     }
   }
 `
@@ -99,6 +109,7 @@ const LinkWrapper = styled.ul`
   width: 100%;
   margin-top: 1em;
   display: flex;
+  justify-content: center;
   list-style: none;
 
   li {
@@ -118,6 +129,7 @@ const LinkWrapper = styled.ul`
   li:nth-of-type(1) {
     background-color: ${({ theme }) => theme.colors.blue};
   }
+  
   li:nth-of-type(2) {
     background-color: ${({ theme }) => theme.colors.orange};
   }
@@ -168,7 +180,7 @@ export default function Home() {
         </HeadingWrapper>
 
         <ImgWrapper ref={imgRef}>
-          <img src={Img} alt="Man writting code" />
+          <Img/>
         </ImgWrapper>
       </BannerSection>
     </>

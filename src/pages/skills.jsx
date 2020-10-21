@@ -144,7 +144,7 @@ const Skills = () => {
     const textWrapper = textRef.current
     const heading = textWrapper.querySelector("div:nth-of-type(1)")
     const buttons = textWrapper.querySelectorAll("button")
-    slideInTopAnimation([imgRef.current, heading, buttons, frontendLiList], 1)
+    slideInTopAnimation([imgRef.current, heading, buttons, frontendLiList], 0.5)
 
     const imgWrapper = imgRef.current
     skillsSvgAnimation(imgWrapper)

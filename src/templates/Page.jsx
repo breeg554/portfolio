@@ -66,6 +66,7 @@ const ProjectWrapper = styled.div`
   }
   ${({ theme }) => theme.mediaQ.large} {
     padding-left: 2em;
+    margin-bottom: 5em;
   }
 `
 const ProjectPart = styled.div`
@@ -170,7 +171,7 @@ const ProjectTemplate = ({ data }) => {
       </BackIcon>
 
       <ImgWrapper ref={imgRef}>
-        <img src={projectData.projectImg} alt="project present" />
+        <img src={`/images/${projectData.projectImg}`} alt="project present" />
       </ImgWrapper>
       <ProjectWrapper ref={contentRef}>
         <ProjectPart>

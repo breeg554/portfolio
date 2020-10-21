@@ -132,7 +132,7 @@ const Projects = () => {
               <ProjectSideWrapper>
                 <div>
                   {project.stackImages.map(img => (
-                    <StackImg key={img} src={img} alt="stack img" />
+                    <StackImg key={img} src={`/images/${img}`} alt="stack img" />
                   ))}
                 </div>
                 <AniLink path={`/projects/${project.name}`}>See more.</AniLink>
