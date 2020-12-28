@@ -17,7 +17,7 @@ import {
   SkillsList,
   SingleSkill,
   Wrapper,
-} from "./style/skills"
+} from "../pagesStyles/skills"
 
 const SlideInAnimation = (tl, el, delay = 0) => {
   tl.staggerTo(el, 1, { x: "0", autoAlpha: 1, delay: delay }, 0.2)

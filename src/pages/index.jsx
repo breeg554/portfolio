@@ -3,7 +3,12 @@ import Img from "../images/home.svg"
 import AniLink from "../components/CustomAniLink"
 import { slideInTopAnimation } from "../components/Animations"
 import { theme } from "../utils/theme"
-import { BannerSection, ImgWrapper, HeadingWrapper, LinkWrapper } from "./style"
+import {
+  BannerSection,
+  ImgWrapper,
+  HeadingWrapper,
+  LinkWrapper,
+} from "../pagesStyles"
 
 export default function Home() {
   const contentRef = useRef(null)

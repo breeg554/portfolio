@@ -8,7 +8,7 @@ import {
   slideInTopAnimation,
 } from "../components/Animations"
 import { theme } from "../utils/theme"
-import { PageSection } from "./style/pagesStyles"
+import { PageSection } from "../pagesStyles/pagesStyles"
 import {
   ContentWrapper,
   ImgWrapper,
@@ -16,7 +16,7 @@ import {
   SingleProject,
   ProjectSideWrapper,
   StackImg,
-} from "./style/projects"
+} from "../pagesStyles/projects"
 
 const Projects = () => {
   const svgRef = useRef(null)

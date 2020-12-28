@@ -8,8 +8,8 @@ import {
   slideInTopAnimation,
   aboutSvgAnimation,
 } from "../components/Animations"
-import { PageSection } from "./style/pagesStyles"
-import { ImgWrapper, TextWrapper, LinksWrapper } from "./style/about"
+import { PageSection } from "../pagesStyles/pagesStyles"
+import { ImgWrapper, TextWrapper, LinksWrapper } from "../pagesStyles/about"
 
 const About = () => {
   const contentRef = useRef(null)

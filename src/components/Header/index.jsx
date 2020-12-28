@@ -50,7 +50,7 @@ const removeMenuAnimationOnDesktop = (nav, btn) => {
   return undefined
 }
 const Header = () => {
-  const [windowSize, setWindowSize] = useState(window.innerWidth)
+  const [windowSize, setWindowSize] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const menuRef = useRef(null)
   const menuBtn = useRef(null)
@@ -66,8 +66,8 @@ const Header = () => {
     setTimeout(() => tl.current.time(0), 1000)
   }
   useEffect(() => {
+    handleResize()
     window.addEventListener("resize", handleResize)
-
     return () => window.removeEventListener("resize", handleResize)
   }, [])
   useEffect(() => {
