@@ -1,13 +1,8 @@
 import styled from "styled-components"
+import { ImageWrapper } from "./pagesStyles"
 
-export const ImgWrapper = styled.div`
+export const ImgWrapper = styled(ImageWrapper)`
   margin-top: 5em;
-  width: 100%;
-
-  svg {
-    height: 100%;
-    width: 100%;
-  }
   ${({ theme }) => theme.mediaQ.small} {
     flex-basis: 50%;
     margin: 0 0.5em;
@@ -16,6 +11,11 @@ export const ImgWrapper = styled.div`
 export const TextWrapper = styled.div`
   margin-top: 3.5em;
   order: 2;
+  & > div:nth-of-type(1),
+  p,
+  a {
+    opacity: 0;
+  }
   p {
     margin-top: 1.5em;
     font-size: 13px;

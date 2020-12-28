@@ -14,3 +14,11 @@ export const PageSection = styled.section`
     max-width: ${({ theme }) => theme.layoutWidth}px;
   }
 `
+export const ImageWrapper = styled.div`
+  width: 100%;
+  opacity: 0;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+`

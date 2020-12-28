@@ -1,9 +1,13 @@
 import styled from "styled-components"
-
+import { ImageWrapper } from "./pagesStyles"
 export const ContentWrapper = styled.div`
   margin-top: 3.5em;
   order: 2;
   height: auto;
+  & > div:nth-of-type(1),
+  li {
+    opacity: 0;
+  }
   ${({ theme }) => theme.mediaQ.small} {
     order: 1;
     margin: 4em 1em 0 0;
@@ -17,14 +21,9 @@ export const ContentWrapper = styled.div`
     padding-right: 3em;
   }
 `
-export const ImgWrapper = styled.div`
+export const ImgWrapper = styled(ImageWrapper)`
   margin-top: 5em;
-  width: 100%;
   order: 1;
-  svg {
-    height: 100%;
-    width: 100%;
-  }
   ${({ theme }) => theme.mediaQ.small} {
     order: 2;
   }

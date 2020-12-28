@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { PageSection } from "./pagesStyles"
+import { PageSection, ImageWrapper } from "./pagesStyles"
 
 export const BannerSection = styled(PageSection)`
   overflow: hidden;
@@ -10,14 +10,9 @@ export const BannerSection = styled(PageSection)`
     justify-content: space-between;
   }
 `
-export const ImgWrapper = styled.div`
-  width: 100%;
+export const ImgWrapper = styled(ImageWrapper)`
   max-width: 650px;
   margin: 0 auto;
-  svg {
-    width: 100%;
-    height: auto;
-  }
   ${({ theme }) => theme.mediaQ.medium} {
     flex-grow: 1;
     flex: 50%;
@@ -33,6 +28,11 @@ export const HeadingWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  h1,
+  li,
+  & > p {
+    opacity: 0;
+  }
   h1 {
     font-weight: 600;
     span {

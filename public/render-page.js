@@ -50008,7 +50008,7 @@ var removeMenuAnimationOnDesktop = function removeMenuAnimationOnDesktop(nav, bt
 };
 
 var Header = function Header() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(window.innerWidth),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
       windowSize = _useState[0],
       setWindowSize = _useState[1];
 
@@ -50035,6 +50035,7 @@ var Header = function Header() {
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    handleResize();
     window.addEventListener("resize", handleResize);
     return function () {
       return window.removeEventListener("resize", handleResize);

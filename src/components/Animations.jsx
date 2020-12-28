@@ -14,6 +14,7 @@ export const aboutSvgAnimation = img => {
   const flower = img.querySelector("#flower")
   const tl = gsap.timeline()
   gsap.set([man, floor, table, device, flower], { autoAlpha: 0 })
+  gsap.set(img, { autoAlpha: 1 })
   tl.staggerFromTo(
     [floor, table, device, man, flower],
     1,
@@ -109,6 +110,9 @@ export const allRocketAnimation = wrapper => {
   const background = wrapper.querySelector("#background")
   gsap.set([flame, man, flowers, background.children, rocket], {
     autoAlpha: 0,
+  })
+  gsap.set(wrapper, {
+    autoAlpha: 1,
   })
   const showTl = showRocketSvg(head, man, flowers, background, rocket)
   const rocketTl = rocketAnime(rocket)

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { PageSection } from "./pagesStyles"
+import { PageSection, ImageWrapper } from "./pagesStyles"
 export const SkillsSection = styled(PageSection)`
   overflow: hidden;
   position: relative;
@@ -7,16 +7,10 @@ export const SkillsSection = styled(PageSection)`
   padding: 0;
 `
 
-export const ImgWrapper = styled.div`
+export const ImgWrapper = styled(ImageWrapper)`
   z-index: 0;
   order: 1;
-  width: 100%;
   margin-top: 7em;
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-
   ${({ theme }) => theme.mediaQ.medium} {
     order: 2;
     margin: 0 0.5em;
@@ -30,7 +24,11 @@ export const TextWrapper = styled.div`
   margin-top: 4em;
   padding: 2em 1em 0 1em;
   position: relative;
-
+  & > div:nth-of-type(1),
+  button,
+  ul:nth-of-type(1) li {
+    opacity: 0;
+  }
   ${({ theme }) => theme.mediaQ.medium} {
     flex-basis: 350px;
     margin: 0 5% 0 2em;
