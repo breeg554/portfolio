@@ -1,154 +1,21 @@
 import React, { useEffect, useRef } from "react"
-import styled from "styled-components"
 import { IoIosArrowBack } from "react-icons/io"
 import { graphql } from "gatsby"
-import AniLink from "../components/NewAniLink"
+import AniLink from "../components/CustomAniLink"
 import { slideInTopAnimation } from "../components/Animations"
-const StyledProjectPage = styled.section`
-  min-height: 100vh;
-  width: 100%;
-  max-width: ${({ theme }) => theme.layoutWidth}px;
-  margin: 0 auto;
-  padding: 3em 1em 1em 1em;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 1em;
-  ${({ theme }) => theme.mediaQ.small} {
-    grid-row-gap: 0;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 80px 1fr;
-    grid-template-areas:
-      "btn   ."
-      "left right";
-    align-items: center;
-  }
-`
-const BackIcon = styled.div`
-  margin-top: 3em;
-  max-width: 60px;
-  a {
-    display: flex;
-    align-items: top;
-    color: ${({ theme }) => theme.colors.lightGray};
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 12px;
-  }
-  ${({ theme }) => theme.mediaQ.small} {
-    grid-area: btn;
-    margin-top: 0;
-  }
-  ${({ theme }) => theme.mediaQ.medium} {
-    margin-left: 1em;
-  }
-  ${({ theme }) => theme.mediaQ.large} {
-    margin-left: 2em;
-  }
-`
-const ImgWrapper = styled.div`
-  width: 100%;
+import { theme } from "../utils/theme"
+import {
+  StyledProjectPage,
+  BackIcon,
+  ImgWrapper,
+  ProjectWrapper,
+  ProjectPart,
+  StackList,
+  StackEl,
+  LinkWrapper,
+  ProjectLink,
+} from "./style"
 
-  overflow: hidden;
-  img {
-    width: 100%;
-  }
-  ${({ theme }) => theme.mediaQ.small} {
-    grid-area: right;
-  }
-`
-const ProjectWrapper = styled.div`
-  ${({ theme }) => theme.mediaQ.small} {
-    grid-area: left;
-  }
-  ${({ theme }) => theme.mediaQ.medium} {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-  ${({ theme }) => theme.mediaQ.large} {
-    padding-left: 2em;
-    margin-bottom: 5em;
-  }
-`
-const ProjectPart = styled.div`
-  margin-bottom: 1em;
-  & > span {
-    display: inline-block;
-    font-size: 12px;
-    color: #ccc;
-    margin-bottom: 0.5em;
-  }
-  h1 {
-    font-size: 30px;
-  }
-  p,
-  h1,
-  li {
-    color: ${({ theme }) => theme.colors.gray};
-  }
-  ${({ theme }) => theme.mediaQ.small} {
-    h1 {
-      font-size: 40px;
-    }
-    & > span {
-      font-size: 15px;
-    }
-  }
-  ${({ theme }) => theme.mediaQ.medium} {
-    h1 {
-      font-size: 50px;
-    }
-    & > span {
-      font-size: 17px;
-    }
-    p {
-      font-size: 18px;
-    }
-  }
-  ${({ theme }) => theme.mediaQ.large} {
-    h1 {
-      font-size: 60px;
-    }
-  }
-`
-const StackList = styled.ul`
-  list-style: none;
-  display: flex;
-  display: flex;
-  flex-wrap: wrap;
-`
-const StackEl = styled.li`
-  margin-right: 1em;
-`
-const LinkWrapper = styled.ul`
-  width: 100%;
-  display: flex;
-  list-style: none;
-
-  li {
-    padding: 0.3em 0.7em;
-    margin-right: 0.8em;
-    border-radius: 5px;
-    a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-    }
-  }
-  li:nth-of-type(1) {
-    background-color: ${({ theme }) => theme.colors.orange};
-  }
-  li:nth-of-type(2) {
-    background-color: ${({ theme }) => theme.colors.blue};
-  }
-  ${({ theme }) => theme.mediaQ.medium} {
-    li {
-      padding: 0.3em 1em;
-    }
-    a {
-      font-size: 16px;
-    }
-  }
-`
 const ProjectTemplate = ({ data }) => {
   const contentRef = useRef(null)
   const imgRef = useRef(null)
@@ -164,7 +31,7 @@ const ProjectTemplate = ({ data }) => {
   return (
     <StyledProjectPage>
       <BackIcon>
-        <AniLink path="/projects">
+        <AniLink path="/projects" color={theme.colors.lightGray}>
           <IoIosArrowBack />
           back
         </AniLink>
@@ -191,12 +58,26 @@ const ProjectTemplate = ({ data }) => {
           </StackList>
         </ProjectPart>
         <LinkWrapper>
-          <li>
-            <a href="#">Demo!</a>
-          </li>
-          <li>
-            <a href="#">Code!</a>
-          </li>
+          <ProjectLink
+            isDisabled={projectData.demo ? false : true}
+            color={theme.colors.orange}
+          >
+            {projectData.demo ? (
+              <a href={projectData.demo} target="__blank">
+                Demo!
+              </a>
+            ) : (
+              <span>Demo!</span>
+            )}
+          </ProjectLink>
+          <ProjectLink
+            isDisabled={projectData.code ? false : true}
+            color={theme.colors.blue}
+          >
+            <a href={projectData.code} target="__blank">
+              Code!
+            </a>
+          </ProjectLink>
         </LinkWrapper>
       </ProjectWrapper>
     </StyledProjectPage>
@@ -215,6 +96,8 @@ export const query = graphql`
             stack
             stackImages
             projectImg
+            demo
+            code
           }
         }
       }

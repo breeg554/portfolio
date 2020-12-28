@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react"
-import styled from "styled-components"
 import SvgImg from "../images/skills.svg"
 import Heading from "../components/SectionHeading"
 import { theme } from "../utils/theme"
@@ -10,111 +9,15 @@ import {
   skillsSvgAnimation,
   svgChangeSkills,
 } from "../components/Animations"
-const SkillsSection = styled.section`
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: ${({ theme }) => theme.layoutWidth}px;
-  margin: 0 auto;
-  ${({ theme }) => theme.mediaQ.small} {
-    flex-direction: row;
-    align-items: center;
-  }
-`
-const BgImg = styled.div`
-  z-index: 0;
-  order: 1;
-  width: 100%;
-  margin-top: 4em;
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-  ${({ theme }) => theme.mediaQ.small} {
-    order: 2;
-    margin: 0 0.5em;
-    flex: 50%;
-  }
-  ${({ theme }) => theme.mediaQ.medium} {
-    padding-right: 2em;
-  }
-`
-const TextWrapper = styled.div`
-  order: 2;
-  width: 100%;
-  margin-top: 2em;
-  padding: 2em 1em 0 1em;
-  position: relative;
-  ${({ theme }) => theme.mediaQ.small} {
-    order: 1;
-    margin: 0 5% 0 0;
-    flex-basis: 250px;
-  }
-  ${({ theme }) => theme.mediaQ.medium} {
-    flex-basis: 350px;
-    margin: 0 5% 0 2em;
-    & > div {
-      margin-top: 1em;
-    }
-  }
-  ${({ theme }) => theme.mediaQ.large} {
-    margin-left: 3em;
-  }
-`
-const SkillsButton = styled.button`
-  background-color: transparent;
-  border: none;
-  color: ${({ theme, isActive }) =>
-    isActive ? theme.colors.orange : theme.colors.blue};
-  margin-right: 1em;
-  margin-top: 0.5em;
-  font-size: 18px;
-  font-weight: 600;
-  outline: none;
-  ${({ theme }) => theme.mediaQ.medium} {
-    font-size: 22px;
-    cursor: pointer;
-  }
-`
-const SkillsList = styled.ul`
-  list-style: none;
-  margin-top: 1em;
-`
-const SingleSkill = styled.li`
-  color: ${({ theme }) => theme.colors.blue};
-  font-size: 15px;
-  position: relative;
-  margin-bottom: 0.3em;
-  margin-left: 0.5em;
-  &::before {
-    position: absolute;
-    top: 50%;
-    left: -0.5em;
-    transform: translateY(-50%);
-    content: "";
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: ${({ theme }) => theme.colors.blue};
-  }
-  ${({ theme }) => theme.mediaQ.medium} {
-    font-size: 18px;
-    margin-bottom: 0.5em;
-  }
-`
-const Wrapper = styled.div`
-  position: relative;
-  width: 100%;
-  ul:nth-of-type(2) {
-    position: absolute;
-    top: 0;
-    margin-top: 0;
-  }
-`
+import {
+  SkillsSection,
+  ImgWrapper,
+  TextWrapper,
+  SkillsButton,
+  SkillsList,
+  SingleSkill,
+  Wrapper,
+} from "./style/skills"
 
 const SlideInAnimation = (tl, el, delay = 0) => {
   tl.staggerTo(el, 1, { x: "0", autoAlpha: 1, delay: delay }, 0.2)
@@ -207,9 +110,9 @@ const Skills = () => {
           </SkillsList>
         </Wrapper>
       </TextWrapper>
-      <BgImg ref={imgRef}>
+      <ImgWrapper ref={imgRef}>
         <SvgImg />
-      </BgImg>
+      </ImgWrapper>
     </SkillsSection>
   )
 }

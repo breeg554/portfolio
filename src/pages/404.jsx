@@ -7,10 +7,11 @@ const ErrorPage = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   svg {
     width: 100%;
-    height: 100%;
+
     max-width: 850px;
   }
 `
@@ -18,28 +19,29 @@ const ErrorPage = styled.div`
 const Error = () => {
   // const [mousePosition, setMousePosition] = useState({ x: null, y: null })
   const svgRef = useRef()
-  // const eyes = useRef()
+  // const movingPart = useRef()
   // const updateMousePosition = e => {
   //   setMousePosition({
   //     x: (e.clientX * 100) / window.innerWidth,
   //     y: (e.clientY * 100) / window.innerHeight,
   //   })
-  //   if (eyes) {
-  //     console.log(eyes)
-  //     eyes.current[0].style.transform = `translate(${mousePosition.x}px, ${mousePosition.y}px)`
+  //   if (movingPart) {
+  //     console.log(movingPart)
+
   //   }
   // }
   // useEffect(() => {
-  //   eyes.current = [...svgRef.current.querySelectorAll("#eye")]
+  //   movingPart.current = [...svgRef.current.querySelectorAll("#moving")]
   //   window.addEventListener("mousemove", updateMousePosition)
   //   return () => window.removeEventListener("mousemove", updateMousePosition)
   // }, [])
   // useEffect(() => {
-  //   // console.log(eyes.current[0])
+  //   console.log(mousePosition)
   // }, [mousePosition])
   return (
     <ErrorPage ref={svgRef}>
       <Svg404 />
+      <a href="/">Home Page!</a>
     </ErrorPage>
   )
 }
