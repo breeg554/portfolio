@@ -3,7 +3,8 @@ import { ThemeProvider, createGlobalStyle } from "styled-components"
 import { theme } from "../utils/theme"
 import Header from "./Header"
 import styled from "styled-components"
-import Footer from './Footer'
+import Footer from "./Footer"
+import Seo from "./Seo"
 const Global = createGlobalStyle`
   *{
     margin: 0;
@@ -21,10 +22,11 @@ const Main = styled.main`
 export default function Layout({ children }) {
   return (
     <ThemeProvider theme={theme}>
+      <Seo />
       <Global />
       <Header />
       <Main>{children}</Main>
-      <Footer/>
+      <Footer />
     </ThemeProvider>
   )
 }

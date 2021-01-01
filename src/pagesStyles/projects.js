@@ -58,6 +58,7 @@ export const SingleProject = styled.li`
       padding: 0.2em 0.5em;
       transition: all 0.2s ease-in-out;
       margin-right: 0.5em;
+      color: ${({ theme }) => theme.colors.orange};
       &:hover {
         background-color: ${({ theme }) => theme.colors.orange};
         color: #fff;
@@ -75,7 +76,7 @@ export const ProjectSideWrapper = styled.div`
   }
 `
 export const StackImg = styled.img`
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   margin-right: 0.3em;
 `

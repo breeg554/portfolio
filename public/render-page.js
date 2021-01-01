@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("D:\\Projekty\\portfolio\\node_modules\\@reach\\router\\index.js"), require("D:\\Projekty\\portfolio\\node_modules\\lodash\\merge.js"), require("react"), require("react-dom/server"));
+		module.exports = factory(require("D:\\Projekty\\portfolio\\node_modules\\@reach\\router\\index.js"), require("D:\\Projekty\\portfolio\\node_modules\\lodash\\merge.js"), require("react"), require("react-dom/server"), require("react-helmet"));
 	else if(typeof define === 'function' && define.amd)
-		define("lib", ["D:\\Projekty\\portfolio\\node_modules\\@reach\\router\\index.js", "D:\\Projekty\\portfolio\\node_modules\\lodash\\merge.js", "react", "react-dom/server"], factory);
+		define("lib", ["D:\\Projekty\\portfolio\\node_modules\\@reach\\router\\index.js", "D:\\Projekty\\portfolio\\node_modules\\lodash\\merge.js", "react", "react-dom/server", "react-helmet"], factory);
 	else if(typeof exports === 'object')
-		exports["lib"] = factory(require("D:\\Projekty\\portfolio\\node_modules\\@reach\\router\\index.js"), require("D:\\Projekty\\portfolio\\node_modules\\lodash\\merge.js"), require("react"), require("react-dom/server"));
+		exports["lib"] = factory(require("D:\\Projekty\\portfolio\\node_modules\\@reach\\router\\index.js"), require("D:\\Projekty\\portfolio\\node_modules\\lodash\\merge.js"), require("react"), require("react-dom/server"), require("react-helmet"));
 	else
-		root["lib"] = factory(root["D:\\Projekty\\portfolio\\node_modules\\@reach\\router\\index.js"], root["D:\\Projekty\\portfolio\\node_modules\\lodash\\merge.js"], root["react"], root["react-dom/server"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE__reach_router__, __WEBPACK_EXTERNAL_MODULE_lodash_merge__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom_server__) {
+		root["lib"] = factory(root["D:\\Projekty\\portfolio\\node_modules\\@reach\\router\\index.js"], root["D:\\Projekty\\portfolio\\node_modules\\lodash\\merge.js"], root["react"], root["react-dom/server"], root["react-helmet"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE__reach_router__, __WEBPACK_EXTERNAL_MODULE_lodash_merge__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom_server__, __WEBPACK_EXTERNAL_MODULE_react_helmet__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -50157,6 +50157,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_theme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/theme */ "./src/utils/theme.js");
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Header */ "./src/components/Header/index.jsx");
 /* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Footer */ "./src/components/Footer/index.jsx");
+/* harmony import */ var _Seo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Seo */ "./src/components/Seo.jsx");
 
 
 function _templateObject() {
@@ -50175,6 +50176,7 @@ function _templateObject() {
 
 
 
+
 var Global = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["createGlobalStyle"])(_templateObject());
 var Main = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].main.withConfig({
   displayName: "Layout__Main"
@@ -50186,7 +50188,7 @@ function Layout(_ref2) {
   var children = _ref2.children;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
     theme: _utils_theme__WEBPACK_IMPORTED_MODULE_3__["theme"]
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Global, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Main, null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Seo__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Global, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Main, null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Footer__WEBPACK_IMPORTED_MODULE_5__["default"], null));
 }
 
 /***/ }),
@@ -50320,6 +50322,39 @@ var SocialLinkTooltip = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"
 
 /***/ }),
 
+/***/ "./src/components/Seo.jsx":
+/*!********************************!*\
+  !*** ./src/components/Seo.jsx ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-helmet */ "react-helmet");
+/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var Seo = function Seo() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_1__["Helmet"], {
+    htmlAttributes: {
+      lang: "en"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    name: "description",
+    content: "Portfolio Dawid Kielbasa breeg554 "
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
+    "data-react-helmet": "true"
+  }, "Dawid Kielbasa - portfolio")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Seo);
+
+/***/ }),
+
 /***/ "./src/dataContent/nav.json":
 /*!**********************************!*\
   !*** ./src/dataContent/nav.json ***!
@@ -50425,6 +50460,17 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE_react_dom_server__;
+
+/***/ }),
+
+/***/ "react-helmet":
+/*!*******************************!*\
+  !*** external "react-helmet" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_react_helmet__;
 
 /***/ }),
 

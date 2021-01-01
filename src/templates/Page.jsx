@@ -38,7 +38,7 @@ const ProjectTemplate = ({ data }) => {
       </BackIcon>
 
       <ImgWrapper ref={imgRef}>
-        <img src={`/images/${projectData.projectImg}`} alt="project present" />
+        <img src={`../../${projectData.projectImg}`} alt="project present" />
       </ImgWrapper>
       <ProjectWrapper ref={contentRef}>
         <ProjectPart>
@@ -63,7 +63,7 @@ const ProjectTemplate = ({ data }) => {
             color={theme.colors.orange}
           >
             {projectData.demo ? (
-              <a href={projectData.demo} target="__blank">
+              <a href={projectData.demo} target="_blank" rel="noreferrer">
                 Demo!
               </a>
             ) : (
@@ -74,7 +74,7 @@ const ProjectTemplate = ({ data }) => {
             isDisabled={projectData.code ? false : true}
             color={theme.colors.blue}
           >
-            <a href={projectData.code} target="__blank">
+            <a href={projectData.code} target="_blank" rel="noreferrer">
               Code!
             </a>
           </ProjectLink>

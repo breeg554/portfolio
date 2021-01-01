@@ -37,16 +37,17 @@ const About = () => {
           taught me to be persistent in achieving my goals.
         </p>
         <p>
-          Finally, I think that I am ready to start my adventure with work /
-          internship as a frontend-developer and if you think so too and want to
-          give me a chance please contact me via email /dvdk98@gmail.com/.
+          Finally, I think that I am ready to start my adventure with
+          <strong> work / internship</strong> as a frontend-developer and if you
+          think so too and want to give me a chance please contact me via email
+          <strong> dvdk98@gmail.com</strong>.
         </p>
         <LinksWrapper>
           <li>
             <AniLink path="/skills">My skills.</AniLink>
           </li>
           <li>
-            <a href="/static/cv.pdf" download>
+            <a href="../../cv.pdf" download>
               <IoMdCloudDownload />
               Resume
             </a>

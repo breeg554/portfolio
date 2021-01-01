@@ -1,14 +1,14 @@
 [
   {
     "id": 0,
-    "name": "weatherapp",
-    "heading": "Weather App.",
-    "content": "Dasdas as das das dasd asd as das dasd asdasdas asda sdddd. Dadj jdas aii adasdhhhd hasdashaaha adasd asdhda sd sah",
-    "stack": ["React", "html", "css"],
-    "stackImages": ["contentful.png", "gatsby.png"],
-    "projectImg": "mockupZbigniewkustra.png",
+    "name": "todoapp",
+    "heading": "Todo App.",
+    "content": "The application is a mini copy of Trello. We have the ability to create boards, lists, tasks, move tasks and lists using the DragAndDrop system.",
+    "stack": ["React", "Express", "Oracle DB", "Unsplash API"],
+    "stackImages": ["../../node.png", "../../react.png", "../../oracle.png"],
+    "projectImg": "../../todo.png",
     "demo": "",
-    "code": "https://github.com/breeg554/renovation"
+    "code": "https://github.com/breeg554/BD_2020_Dawid_Kielbasa"
   },
   {
     "id": 1,
@@ -16,8 +16,8 @@
     "heading": "Phone shop.",
     "content": "A small e-shop project written at the beginning of React learning. Managing the state of the application using ContextAPI, style with Styled-components.",
     "stack": ["React", "Styled-components", "PayPal API"],
-    "stackImages": ["contentful.png", "gatsby.png", "netlify.png"],
-    "projectImg": "mockupPhoneshop.png",
+    "stackImages": ["../../react.png", "../../netlify.png"],
+    "projectImg": "../../mockupPhoneshop.png",
     "demo": "https://store-react-mobile.netlify.app/",
     "code": "https://github.com/breeg554/store"
   },
@@ -25,10 +25,10 @@
     "id": 2,
     "name": "staticpage",
     "heading": "Evolo page.",
-    "content": "Dasdas as  das dasd asdasdas asda sdddd. Dadj jdas aii adasdhhhd hasdashaaha adasd asdhda sd sah",
-    "stack": ["html", "css"],
-    "stackImages": ["contentful.png", "gatsby.png", "netlify.png"],
-    "projectImg": "mockupEvolo.png",
+    "content": "It was one of the first pages written in html and css (sass). While writing the project, I was learning the Sass preprocessor.",
+    "stack": ["html", "sass"],
+    "stackImages": ["../../html.png", "../../sass.png"],
+    "projectImg": "../../mockupEvolo.png",
     "demo": "https://breeg554.github.io/Evol-1-test-page/",
     "code": "https://github.com/breeg554/Evol-1-test-page"
   }

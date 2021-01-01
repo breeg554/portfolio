@@ -31,7 +31,7 @@ const Navigation = ({ setIsOpen, menuRef }) => {
       <SideNavSocialLinks>
         <SocialMenuSingleLink>
           <SocialLinkTooltip>Readme!</SocialLinkTooltip>
-          <a href="/static/cv.pdf" download>
+          <a href="../../../cv.pdf" download>
             <IoMdCloudDownload />
           </a>
         </SocialMenuSingleLink>
