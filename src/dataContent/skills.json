@@ -1,59 +1,76 @@
-[{
-    "frontend": [{
-            "id": 0,
-            "name": "Js"
-        },
-        {
-            "id": 1,
-            "name": "Html, Css"
-        },
-        {
-            "id": 2,
-            "name": "Sass"
-        },
-        {
-            "id": 3,
-            "name": "React.js"
-        },
-        {
-            "id": 4,
-            "name": "Gatsby.js"
-        },
-        {
-            "id": 5,
-            "name": "Styled Components"
-        },
-        {
-            "id": 6,
-            "name": "Gsap"
-        },
-        {
-            "id": 7,
-            "name": "RESTfull Services/APIs"
-        },
-        {
-            "id": 8,
-            "name": "Responsive Web Design"
-        },
-        {
-            "id": 9,
-            "name": "Git"
-        }
+[
+  {
+    "frontend": [
+      {
+        "id": 0,
+        "name": "Js"
+      },
+      {
+        "id": 1,
+        "name": "Html, Css"
+      },
+      {
+        "id": 2,
+        "name": "Sass"
+      },
+      {
+        "id": 3,
+        "name": "React.js"
+      },
+      {
+        "id": 4,
+        "name": "Gatsby.js"
+      },
+      {
+        "id": 5,
+        "name": "Redux"
+      },
+      {
+        "id": 6,
+        "name": "Styled Components"
+      },
+      {
+        "id": 7,
+        "name": "Gsap"
+      },
+      {
+        "id": 8,
+        "name": "RESTfull Services/APIs"
+      },
+      {
+        "id": 9,
+        "name": "Responsive Web Design"
+      },
+      {
+        "id": 10,
+        "name": "Git"
+      }
     ],
-    "backend": [{
+    "backend": [
+      {
         "id": 0,
         "name": "Node.js, Express"
-    }, {
+      },
+      {
         "id": 1,
         "name": "CRUD Operations"
-    }, {
+      },
+      {
         "id": 2,
         "name": "Rest API Design"
-    }, {
+      },
+      {
         "id": 3,
         "name": "MySQL"
-    }, {
+      },
+      {
         "id": 4,
-        "name": "Oracle Database/PLSQL"
-    }]
-}]
+        "name": "MongoDB"
+      },
+      {
+        "id": 5,
+        "name": "Socket.io"
+      }
+    ]
+  }
+]

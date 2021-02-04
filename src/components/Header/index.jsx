@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect } from "react"
 import { globalHistory } from "@reach/router"
 import gsap from "gsap"
 import LogoImg from "../../images/Logo3.svg"
-import { Logo, OpenMenuBtn, HeaderWrapper, HeaderComponent } from "./style"
 import AniLink from "../CustomAniLink"
 import Nav from "../Navigation"
+import { Logo, OpenMenuBtn, HeaderWrapper, HeaderComponent } from "./style"
 import { theme } from "../../utils/theme"
 
 const menuAnimation = (tl, nav, btn) => {

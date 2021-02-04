@@ -22,5 +22,17 @@ module.exports = {
         layout: require.resolve(`./src/components/Layout.jsx`),
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "breeg554-portfolio",
+        short_name: "portfolio",
+        start_url: "/",
+        background_color: "#6b37bf",
+        theme_color: "#6b37bf",
+        display: "minimal-ui",
+        icon: "src/images/favicon.png",
+      },
+    },
   ],
 }

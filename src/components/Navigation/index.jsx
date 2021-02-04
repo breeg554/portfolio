@@ -3,6 +3,7 @@ import AniLink from "../CustomAniLink"
 import { IoMdCloudDownload } from "react-icons/io"
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 import mainMenuLinksData from "../../dataContent/nav.json"
+import { theme } from "../../utils/theme"
 import {
   Nav,
   SideNavMainMenu,
@@ -11,7 +12,6 @@ import {
   SocialMenuSingleLink,
   SocialLinkTooltip,
 } from "./style"
-import { theme } from "../../utils/theme"
 const Navigation = ({ setIsOpen, menuRef }) => {
   return (
     <Nav ref={menuRef} onClick={() => setIsOpen(false)}>
@@ -41,12 +41,12 @@ const Navigation = ({ setIsOpen, menuRef }) => {
             <AiFillGithub />
           </a>
         </SocialMenuSingleLink>
-        <SocialMenuSingleLink>
+        {/* <SocialMenuSingleLink>
           <SocialLinkTooltip>Linkedin!</SocialLinkTooltip>
           <a href="https://github.com/breeg554" target="__blank">
             <AiFillLinkedin />
           </a>
-        </SocialMenuSingleLink>
+        </SocialMenuSingleLink> */}
       </SideNavSocialLinks>
     </Nav>
   )

@@ -1,14 +1,26 @@
 [
   {
     "id": 0,
-    "name": "todoapp",
-    "heading": "Todo App.",
-    "content": "The application is a mini copy of Trello. We have the ability to create boards, lists, tasks, move tasks and lists using the DragAndDrop system.",
-    "stack": ["React", "Express", "Oracle DB", "Unsplash API"],
-    "stackImages": ["../../node.png", "../../react.png", "../../oracle.png"],
-    "projectImg": "../../todo.png",
-    "demo": "",
-    "code": "https://github.com/breeg554/BD_2020_Dawid_Kielbasa"
+    "name": "instaapp",
+    "heading": "InstaApp.",
+    "content": "The app is an instagram clone. It was created for training purposes and getting to know with socket.io. ",
+    "stack": [
+      "React",
+      "Redux",
+      "Express",
+      "MongoDB",
+      "Socket.io",
+      "Cloudinary"
+    ],
+    "stackImages": [
+      "../../node.png",
+      "../../react.png",
+      "../../mongodb.png",
+      "../../cloudinary.png"
+    ],
+    "projectImg": "../../mockupInstaApp.png",
+    "demo": "https://frosty-swartz-c5e07d.netlify.app/",
+    "code": "https://github.com/breeg554/instagramGUI"
   },
   {
     "id": 1,

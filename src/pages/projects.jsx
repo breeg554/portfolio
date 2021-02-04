@@ -3,18 +3,19 @@ import Heading from "../components/SectionHeading"
 import ProjectSvg from "../images/rocket.svg"
 import AniLink from "../components/CustomAniLink"
 import DataContent from "../dataContent/projects.json"
+import { theme } from "../utils/theme"
+import { PageSection } from "../pagesStyles/pagesStyles"
 import {
   allRocketAnimation,
   slideInTopAnimation,
 } from "../components/Animations"
-import { theme } from "../utils/theme"
-import { PageSection } from "../pagesStyles/pagesStyles"
 import {
   ContentWrapper,
   ImgWrapper,
   ProjectsWrapper,
   SingleProject,
   ProjectSideWrapper,
+  StackImgWrapper,
   StackImg,
 } from "../pagesStyles/projects"
 
@@ -43,11 +44,11 @@ const Projects = () => {
               </h3>
               <p>{project.content}</p>
               <ProjectSideWrapper>
-                <div>
+                <StackImgWrapper>
                   {project.stackImages.map(img => (
                     <StackImg key={img} src={img} alt="stack img" />
                   ))}
-                </div>
+                </StackImgWrapper>
                 <AniLink path={`/projects/${project.name}`}>See more.</AniLink>
               </ProjectSideWrapper>
             </SingleProject>

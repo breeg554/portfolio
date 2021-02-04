@@ -75,8 +75,13 @@ export const ProjectSideWrapper = styled.div`
     font-size: 13px;
   }
 `
+export const StackImgWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+`
 export const StackImg = styled.img`
   width: 20px;
-  height: 20px;
+  max-height: 20px;
   margin-right: 0.3em;
 `

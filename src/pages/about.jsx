@@ -30,17 +30,17 @@ const About = () => {
         <p>
           I'm 22 years old and I'm currently a 3rd year student of IT at
           University of Rzeszów. I started to learn the widely understood
-          "frontend" about 3 years ago. I enjoy getting to know and learning new
-          technologies. Besides programming, sport is also a big part of my
-          life. Several years playing football, then gym, jujitsu and boxing,
-          and finally swimming and chess (I know, a strange combination). It has
-          taught me to be persistent in achieving my goals.
+          <strong> frontend</strong> about 3 years ago. I enjoy getting to know
+          and learning new technologies. Besides programming, sport is also a
+          big part of my life. Several years playing football, then gym, jujitsu
+          and boxing, and finally swimming and chess. It has taught me to be
+          persistent in achieving my goals.
         </p>
         <p>
           Finally, I think that I am ready to start my adventure with
           <strong> work / internship</strong> as a frontend-developer and if you
           think so too and want to give me a chance please contact me via email
-          <strong> dvdk98@gmail.com</strong>.
+          <a href="mailto:dvdk98@gmail.com"> dvdk98@gmail.com</a>.
         </p>
         <LinksWrapper>
           <li>

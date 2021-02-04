@@ -21,6 +21,12 @@ export const TextWrapper = styled.div`
     font-size: 13px;
     color: ${({ theme }) => theme.colors.gray};
   }
+  p {
+    a {
+      color: ${({ theme }) => theme.colors.gray};
+      font-weight: 600;
+    }
+  }
   span {
     color: ${({ theme }) => theme.colors.orange};
   }
