@@ -19,7 +19,7 @@ const menuAnimation = (tl, nav, btn) => {
     .to(upLine, { duration: 0.1, rotation: 45 }, 0.2)
     .to(downLine, { duration: 0.1, rotation: -45 }, 0.2)
     .to(centerLine, { duration: 0.1, autoAlpha: 0 }, 0.2)
-    .from(nav, { xPercent: 100, duration: 0.5, autoAlpha: 1 })
+    .to(nav, { xPercent: -100, duration: 0.5, autoAlpha: 1 })
     .staggerFromTo(
       mainMenuLists,
       1,
@@ -66,6 +66,7 @@ const Header = () => {
     setTimeout(() => tl.current.time(0), 1000)
   }
   useEffect(() => {
+    setIsOpen(false)
     handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
